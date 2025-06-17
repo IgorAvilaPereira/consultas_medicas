@@ -1,0 +1,11 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<h2>Editar Médico</h2>
+    <form action="/medico_editar" method="post">
+        Nome: <input type="text" name="nome" value="{{medico.nome}}">
+        CRM: <input type="text" name="crm" maxlength="5" value="{{medico.crm}}">
+        <input type="hidden" value="{{medico.id}}" name="id">
+        <input type="submit" value="Editar" class="btn btn-primary">
+    </form>    
+{% endblock %}

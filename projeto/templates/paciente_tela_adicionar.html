@@ -1,0 +1,13 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<h2>Adicionar Paciente</h2>
+    <form action="/paciente_adicionar" method="post">
+        Nome: <input type="text" name="nome">
+            Data Nascimento: <input type="date" name="data_nascimento"> <br>
+            email: <input type="email" name="email"> <br>
+
+        cpf: <input type="text" name="cpf" maxlength="11">
+        <input type="submit" value="Adicionar" class="btn btn-primary">
+    </form>    
+{% endblock %}

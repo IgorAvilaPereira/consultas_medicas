@@ -1,0 +1,10 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<h2>Adicionar Médico</h2>
+    <form action="/medico_adicionar" method="post">
+        Nome: <input type="text" name="nome">
+        CRM: <input type="text" name="crm" maxlength="5">
+        <input type="submit" value="Adicionar" class="btn btn-primary">
+    </form>    
+{% endblock %}

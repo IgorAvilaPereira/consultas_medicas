@@ -1,0 +1,21 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<h2>Adicionar Consulta</h2>
+<form action="/consulta_adicionar" method="post">
+    Data/Hora: <input type="datetime-local" name="data_hora"> <br>
+    Médico:
+    <select name="medico_id">
+        {% for medico in vetMedico %}
+        <option value="{{medico.id }}">{{medico.crm}} - {{medico.nome}} </option>
+        {% endfor %}
+    </select> <br>
+    Paciente: <select name="paciente_id">
+        {% for paciente in vetPaciente %}
+        <option value="{{paciente.id }}">{{paciente.cpf}} - {{paciente.nome}} </option>
+        {% endfor %}
+    </select>
+    <textarea name="observacao"></textarea>
+    <input type="submit" value="Adicionar" class="btn btn-primary">
+</form>
+{% endblock %}
