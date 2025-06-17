@@ -4,6 +4,10 @@ Um sistema de controle de consultas médicas web com Flask conectado a um banco 
 
 Já na base de dados o sistema de controle de consultas médicas inclui validação de CPF, auditoria, notificações, regras de agendamento, e registro de histórico, tudo com uso intenso de triggers e funções PL/pgSQL no PostgreSQL.
 
+## Demo
+
+![demo](demo.gif)
+
 ## 👨‍⚕️👩‍⚕️ Operações com Médicos
 
 * MedicoDAO: contém métodos para:
