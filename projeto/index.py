@@ -1,4 +1,3 @@
-# FALTOU 14 e 15 (PENDENTE) => 17/06/25
 import psycopg2
 from flask import Flask, redirect, render_template, request, url_for
 
@@ -141,8 +140,9 @@ class PacienteDAO:
     cur = conn.cursor()
     cur.execute(sql)
     for registro in cur.fetchall():
-        print(registro[0])
-        paciente = Paciente(registro[1], registro[2], registro[3], int(registro[0]))
+        # print(registro[0])
+        # exit(0)
+        paciente = Paciente(registro[1], registro[2], registro[3], registro[4], int(registro[0]))
         # print(paciente)
         vetPaciente.append(paciente)
     cur.close()
@@ -150,12 +150,12 @@ class PacienteDAO:
     return vetPaciente
   
   def obter(self, id):
-    sql = "SELECT * FROM paciente WHERE id = %s;"
+    sql = "SELECT id, nome, mascaraCPF(cpf) as cpf, data_nascimento, email FROM paciente where id = %s"
     conn = self.conexao.abreConexao()
     cur = conn.cursor()
     cur.execute(sql, [id])
     registro = cur.fetchone()
-    paciente = Paciente(registro[1], registro[2], registro[3], int(registro[0]))
+    paciente = Paciente(registro[1], registro[2], registro[3], registro[4], int(registro[0]))
     cur.close()
     conn.close()
     return paciente
