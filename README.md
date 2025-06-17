@@ -89,6 +89,7 @@ python3 -m venv .venv
 pip install -r requirements.txt 
 flask --app index run
 ```
+obs: não esqueça de importar o script.sql em seu SGBD PostgreSQL
 
 ✅ Em resumo:
 
