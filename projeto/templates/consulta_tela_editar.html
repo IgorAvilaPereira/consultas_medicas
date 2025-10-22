@@ -3,8 +3,10 @@
 {% block content %}
 <h2>Consulta: Acrescentar Observação</h2>
     <form action="/consulta_editar" method="post">
-        <textarea name="observacao"></textarea>
+        <textarea name="observacao"></textarea> <br><br>
         <input type="hidden" value="{{consulta_id}}" name="id">
         <input type="submit" value="Editar" class="btn btn-primary">
-    </form>    
+    </form>   
+    <a href="javascript:history.go(-1)">Voltar</a>
+ 
 {% endblock %}

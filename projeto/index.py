@@ -109,7 +109,6 @@ class MedicoDAO:
     cur = conn.cursor()
     cur.execute(sql)
     for registro in cur.fetchall():
-        # print(registro)
         medico = Medico(registro[2], registro[1], registro[0])
         vetMedico.append(medico)
     cur.close()
@@ -140,10 +139,7 @@ class PacienteDAO:
     cur = conn.cursor()
     cur.execute(sql)
     for registro in cur.fetchall():
-        # print(registro[0])
-        # exit(0)
-        paciente = Paciente(registro[1], registro[2], registro[3], registro[4], int(registro[0]))
-        # print(paciente)
+        paciente = Paciente(registro[1], registro[2], registro[3], registro[4], int(registro[0]))        
         vetPaciente.append(paciente)
     cur.close()
     conn.close()
@@ -239,10 +235,8 @@ def deletar_medico(id):
 
 @app.route("/deletar_consulta/<int:id>")
 def deletar_consulta(id):
-  # print(id)
   conexao = ConexaoPostgreSQL()
-  resultado =  ConsultaDAO(conexao).deletar_consulta(id)
-  # print(resultado)
+  resultado =  ConsultaDAO(conexao).deletar_consulta(id)  
   return redirect(url_for('index'))
 
 @app.route("/medico_tela_adicionar")

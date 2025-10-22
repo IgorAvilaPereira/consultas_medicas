@@ -2,12 +2,12 @@
 
 {% block content %}
 <h2>Adicionar Paciente</h2>
-    <form action="/paciente_adicionar" method="post">
-        Nome: <input type="text" name="nome">
-            Data Nascimento: <input type="date" name="data_nascimento"> <br>
-            email: <input type="email" name="email"> <br>
-
-        cpf: <input type="text" name="cpf" maxlength="11">
-        <input type="submit" value="Adicionar" class="btn btn-primary">
-    </form>    
+<form action="/paciente_adicionar" method="post">
+    CPF: <br> <input type="text" name="cpf" maxlength="11"> <br>    
+    Email: <br><input type="email" name="email"> <br>    
+    Nome:<br> <input type="text" name="nome"> <br>
+    Data Nascimento: <br> <input type="date" name="data_nascimento"> <br>     <br> 
+    <input type="submit" value="Adicionar" class="btn btn-primary">
+</form>
+<a href="javascript:history.go(-1)">Voltar</a>
 {% endblock %}
